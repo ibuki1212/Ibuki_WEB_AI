@@ -236,10 +236,52 @@ a{color:inherit;text-decoration:none}
     overflow: hidden;
     box-shadow: 0 10px 28px rgba(47, 107, 74, .14);
     transition:transform .35s, box-shadow .35s;
-    display: flex; flex-direction: column;
+    display: inline-block;
     animation: fadeUp 1.1s cubic-bezier(.22, .8, .24, 1) backwards;
 }
-.card: nth-child(1) { animation-delay: 1.2s }
+.card:nth-child(1) { animation-delay: 1.2s }
+.card:nth-child(2) { animation-delay: 1.4s }
+.card:nth-child(3) { animation-delay: 1.6s }
+.card:hover{
+    transform: translateY(-6px);
+    box-shadow:0 18px 36px rgba(47, 107, 74. .22)
+}
+.card_photo { aspect-ratio: 4/3; overflow: hidden}
+.card_photo img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    transition: transform .6s;
+}
+
+.card:hover .card_photo img { transform:scale(1.06) }
+.card_body {
+    padding: 16px, 18px, 22px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; flex:1;
+}
+
+.card_body h3 {
+    display: flex;
+    align-items: center; gap: 8px;
+    font-size: 17px; font-weight: 700;
+    color: var(--green-dark);
+}
+
+.card_body h3 svg{
+    width: 22px; height: 22px;
+    fill: var(--green-dark)
+}
+
+.card_body p {
+    font-size: 12.5px; color: var(--muted);
+    line-height: 1.8; flex: 1
+}
+
+
 
 
 
@@ -291,7 +333,7 @@ a{color:inherit;text-decoration:none}
     <!-- right: pictures-->
 
     <article class="card">
-        <div class="card_photo"><img src="images/card-hobby" alt="Mountain Climbing"></div>
+        <div class="card_photo"><img src="images/card-hobby.jpg" alt="Mountain Climbing"></div>
         <div class="card_body">
             <h3>
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20 L9 7 L13 14 L16 10 L22 20Z"/></svg>
